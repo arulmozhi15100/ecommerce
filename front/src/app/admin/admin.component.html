@@ -1,0 +1,333 @@
+<nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-center align-items-center">
+    <a class="navbar-brand" href="#">P4e SmartAdmin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Retail<span class="sr-only">(current)</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consumer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Products</a>
+        </li>
+      </ul>
+    </div>
+    <div class="ml-auto text-white nav">
+      <p class="nav nav-item">Welcome &nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+          width="24px" fill="#FFFFFF">
+          <path d="M0 0h24v24H0z" fill="rgb(100, 4, 190)" />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+        </svg>&nbsp;
+      </p>
+    </div>
+    <img class="nav" src="assets/fedex1.png" alt="FedEx" width="120" height="45">
+  </nav>
+
+  <div class="topnav">
+    <div class="mt-3 mx-4 px-2" style="text-align: center;">
+    <input  type="text" placeholder="Search..">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </div>
+  </div>
+  <!-- [(ngModel)}="getusername" name="getusername" -->
+  <!-- {{getusername}} -->
+  
+  <div class="mt-3 mx-4 px-2">
+    <div class="d-flex align-items-center justify-content-center">
+      <h4 id="hding"><u>Retail Profile Management</u></h4>
+      <button type="button" class="btn btn-success ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal"><svg
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>&nbsp;Create
+      </button>
+    </div>
+  </div>
+  
+  <div class="container-retail mt-3 mx-4 px-2">
+  
+    <div class="table-responsive">
+      <table class="table table-responsive table-borderless">
+        <thead>
+          <tr class="bg-dark text-light">
+            <th scope="col" class="text-center">Name</th>
+            <th scope="col" class="text-center">Country</th>
+            <th scope="col" class="text-center">Network ID</th>
+            <th scope="col" class="text-center">Status</th>
+           
+            <th scope="col" class="text-center"><span>Edit</span></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let rd of retailData'>
+              <td class="text-center">{{rd.userName}} </td>
+              <td class="text-center">{{rd.country}}</td>
+              <td class="text-center">{{rd.networkId}}</td>
+              <td class="text-center">{{rd.status}}</td>
+              
+              
+                <td>  <button (click)="onEdit(rd)" style="color: yellow;" class="btn btn-info" type="button" 
+                    class="btn btn-success ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">EDIT</button></td>
+            </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+ 
+  
+  
+  
+  <!-- Modal --For --Create--Form -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Retailer Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <create></create> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal --For --Edit--Form -->
+  <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Retailer Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <!-- <h1>Edit Retailer Profile</h1>  -->
+
+    <div class="container py-5">
+       
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <form [formGroup]= "editForm">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label>Name</label>
+                             <input [class.is-invalid]="c.userName.invalid && c.userName.touched" 
+                             formControlName="userName"  type="text" placeholder="Enter the User Name" class="form-control" >
+                             <small [class.d-none]="c.userName.valid || c.userName.untouched" class="text-danger">Username is required</small>
+                         </div>
+                   
+            <div class="col-sm-6">
+                <div class = "form-group" >
+              
+                    <label>Email</label>
+                    <input  [class.is-invalid]="c.email.invalid && c.email.touched" 
+                    formControlName="email" type="email" placeholder="Enter the email address" class="form-control">
+                    <small [class.d-none]="c.email.valid || c.email.untouched" class="text-danger">Email is required</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- <div class="col-md-10 mx-auto"> -->
+                
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+        
+                           
+                            <label>Phone</label>
+                            <input  [class.is-invalid]="c.phNumber.invalid && c.phNumber.touched" 
+                            formControlName="phNumber" type="number" placeholder="Enter Phone Number" class="form-control">
+                            <small [class.d-none]="c.phNumber.valid || c.phNumber.untouched" class="text-danger">Phone number is not correct.</small>
+                        </div>
+       
+                
+                    <div class="col-sm-6">
+                        <div class = "form-group" >
+                        <label>Password</label>
+                        <input  [class.is-invalid]="c.password.invalid && c.password.touched && c.password.dirty"
+                        formControlName="password" type="password" placeholder="password" class="form-control">
+                        <small [class.d-none]="c.password.valid || c.password.untouched" class="text-danger">Password is required</small>
+                    </div>
+                    </div>
+                
+            <!-- </div> -->
+            </div>
+            </div>
+            
+        <div class = "form-group  col-sm-6">
+             
+            <label>Country</label>
+            <input [class.is-invalid]="c.country.invalid && c.country.touched"
+            formControlName="country" type="name" placeholder="Country" class="form-control" required>
+            
+             
+        </div>
+       
+       </form>
+      
+   Value: {{ editForm.value | json}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="cancel" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" (click)="updateRetailProfileData()" class="btn btn-primary">Save changes</button>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- (click)='deleteCustomer(customer.customerID)' -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>admin works!</p>
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+<h1 style="color: rgb(69, 125, 230);">Ecommerce</h1>
+<div class="d-flex">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create</button>
+    </div>
+</div>
+
+</nav>
+
+<div class="container mt-5 px-2">
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+   
+    <div class="table-responsive">
+      <table class="table table-responsive table-borderless">
+        <thead>
+          <tr class="bg-dark text-light">
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">First name</th>
+            <th scope="col" class="text-center">Last name</th>
+            <th scope="col" class="text-center">Gender</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col" class="text-center">Phone</th>
+            <th scope="col" class="text-center">D.O.B</th>
+            <th scope="col" class="text-center">DoorNo</th>
+            <th scope="col" class="text-center">Street</th>
+            <th scope="col" class="text-center">City</th>
+            <th scope="col" class="text-center">Pincode</th>
+            <th scope="col" class="text-center"><span>Delete</span></th>
+            <th scope="col" class="text-center"><span>Bookings</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let customer of customers'>
+            <td class="text-center">{{customer.customerID}}</td>
+            <td class="text-center">{{customer.customerName.fname}}</td>
+            <td class="text-center">{{customer.customerName.lname}}</td>
+            <td class="text-center">{{customer.gender}}</td>
+            <td class="text-center">{{customer.email}}</td>
+            <td class="text-center">{{customer.phone}}</td>
+            <td class="text-center">{{customer.dateOfBirth}}</td>
+            <td class="text-center">{{customer.address.doorno}}</td>
+            <td class="text-center">{{customer.address.street}}</td>
+            <td class="text-center">{{customer.address.city}}</td>
+            <td class="text-center">{{customer.address.pincode}}</td>
+
+            <td class="text-center">
+              <button type="button" (click)='deleteCustomer(customer.customerID)'
+                class='btn btn-danger btn-sm far fa-trash-alt'></button>
+            </td>
+            <td class="text-center">
+              <button type="button" routerLink="/customer-bookings/{{customer.customerID}}"
+                routerLinkActive="active" class='btn btn-success btn-sm fa fa-book'></button>
+            </td>
+          </tr>
+
+        </tbody> -->
+      <!-- </table>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th scope="col">Employee</th>
+            <th scope="col">first name</th>
+            <th scope="col">Edit</th>
+        
+        </tr>
+    </thead>
+</table>
+ -->
+
+ 
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> --> 

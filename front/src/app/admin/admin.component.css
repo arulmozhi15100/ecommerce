@@ -1,0 +1,49 @@
+
+.nav {
+    background-color:rgb(100, 4, 190);
+}
+.navbar {
+    background-color:rgb(100, 4, 190);
+}
+.navbar-brand {
+    background-color:rgb(100, 4, 190);
+}
+.nav-item {
+    background-color:rgb(100, 4, 190);
+}
+.nav-link {
+    background-color:rgb(100, 4, 190);
+}
+.navbar-toggler{
+    background-color:rgb(100, 4, 190);
+}
+
+#navbarDropdownMenuLink{
+    background-color:white;
+    color:rgb(100, 4, 190);
+}
+
+#hding{
+    color:rgb(59, 59, 224);
+}
+
+.container-retail {
+    background-color:white;
+    color:black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: center;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+   
+    font-size: 17px;
+  }
+
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }

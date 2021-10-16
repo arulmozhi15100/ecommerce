@@ -1,0 +1,164 @@
+<!-- 
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <form>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputFirstname">First name</label>
+                        <input type="text" class="form-control" id="inputFirstname" placeholder="First name">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputLastname">Last name</label>
+                        <input type="text" class="form-control" id="inputLastname" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputAddressLine1">Address</label>
+                        <input type="text" class="form-control" id="inputAddressLine1" placeholder="Street Address">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputAddressLine2">Address (Line 2)</label>
+                        <input type="text" class="form-control" id="inputAddressLine2" placeholder="Line 2">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="City">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="inputState">State</label>
+                        <input type="text" class="form-control" id="inputState" placeholder="State">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="inputPostalCode">Postal Code</label>
+                        <input type="text" class="form-control" id="inputPostalCode" placeholder="Postal Code">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputContactNumber">Contact Number</label>
+                        <input type="number" class="form-control" id="inputContactNumber" placeholder="Contact Number">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputWebsite">Website</label>
+                        <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary px-4 float-right">Save</button>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+    <div class="container py-5">
+       
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <form [formGroup] = "createForm">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label>Name</label>
+                         <input [class.is-invalid]="c.userName.invalid && c.userName.touched" 
+                         formControlName="userName"  type="text" placeholder="Enter the User Name" class="form-control" >
+                         <small [class.d-none]="c.userName.valid || c.userName.untouched" class="text-danger">Username is required</small>
+                     </div>
+               
+        <div class="col-sm-6">
+            <div class = "form-group" >
+          
+                <label>Email</label>
+                <input  [class.is-invalid]="c.email.invalid && c.email.touched" 
+                formControlName="email" type="email" placeholder="Enter the email address" class="form-control">
+                <small [class.d-none]="c.email.valid || c.email.untouched" class="text-danger">Email is required</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- <div class="col-md-10 mx-auto"> -->
+            
+                <div class="form-group row">
+                    <div class="col-sm-6">
+    
+                       
+                        <label>Phone</label>
+                        <input  [class.is-invalid]="c.phNumber.invalid && c.phNumber.touched" 
+                        formControlName="phNumber" type="number" placeholder="Enter Phone Number" class="form-control">
+                        <small [class.d-none]="c.phNumber.valid || c.phNumber.untouched" class="text-danger">Phone number is not correct.</small>
+                    </div>
+   
+            
+                <div class="col-sm-6">
+                    <div class = "form-group" >
+                    <label>Password</label>
+                    <input  [class.is-invalid]="c.password.invalid && c.password.touched && c.password.dirty"
+                    formControlName="password" type="password" placeholder="password" class="form-control">
+                    <small [class.d-none]="c.password.valid || c.password.untouched" class="text-danger">Password is required</small>
+                </div>
+                </div>
+            
+        <!-- </div> -->
+        </div>
+        </div>
+        
+    <div class = "form-group  col-sm-6">
+         
+        <label>Country</label>
+        <input [class.is-invalid]="c.country.invalid && c.country.touched"
+        formControlName="country" type="name" placeholder="Country" class="form-control" required>
+        
+         
+    </div>
+   
+   </form>
+   Value: {{ createForm.value | json}}
+
+   <div class="modal-footer">
+    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+    <button type="button" (click)="postRetailProfileData()" class="btn btn-primary">Save changes</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- [class.is-invalid]="createForm.get('userName').invalid && createForm.get('userName').touched" -->
+
+    <!-- <div *ngIf="c.email.invalid && (c.email.dirty || c.email.touched)"
+    class="alert alert-danger"></div>
+-->
+    <!-- <div *ngIf="c.email.errors?.required">
+        Email is required.
+      </div>  -->
+      <!-- [class.is-invalid]="createForm.get('email').invalid && createForm.get('email').touched"  -->
+    <!-- [ngClass] = "{'has-error':createForm.get('email').errors}"> -->

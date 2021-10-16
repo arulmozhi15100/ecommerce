@@ -1,0 +1,82 @@
+
+        <div class='dashboard-content'>
+            <div class="container" id="container">
+                <div class="form-container log-in-container">
+                    <form action="#" [formGroup]="loginForm">
+                        <h1><img src="assets/lock.jpg" alt="lock" width="50" height="50">&nbsp;Login
+                        </h1>
+
+                        <div class = "form-group">
+                        <input [class.is-invalid]="c.email.invalid && c.email.touched" formControlName="email" type="email" placeholder="Email" id="lblemail" name="email" (ngSubmit)="login()">
+                        <small [class.d-none]="c.email.valid || c.email.untouched" class="text-danger">Email is required</small>   
+                        <!-- [(ngModel)]="email" /> -->
+                        </div>
+                        <div class = "form-group">
+                        <input formControlName="password" type="password"  placeholder="Password" id="lblpassword"
+                            name="password">
+                            <small [class.d-none]="c.password.valid || c.password.untouched" class="text-danger">Password is required</small>
+                             <!-- [(ngModel)]="password" /> -->
+                            </div>
+                        
+                        <a href="#">Forgot your password?</a>
+                        <button type="submit" (click)="login()">Login</button>
+                     <a routerLink="/admin" routerLinkActive="active">Login</a>
+
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>login works!</p>
+
+ <h1>Login Form</h1> 
+
+<form [formGroup] = "loginForm">
+ 
+ <div class = "form-group">
+       
+    <label>Email</label>
+     <input formControlName="email" type="email" placeholder="email" class="form-control">
+ </div>
+
+ <div class = "form-group">
+       
+    <label>Password</label>
+     <input formControlName="password" type="password" placeholder="password" class="form-control">
+ </div>
+ <div class = "form-group"> -->
+       
+    <!-- <label>Confirm Password</label>
+     <input type="password" placeholder="password" class="form-control">
+ </div> -->
+<!-- 
+ <button type="submit" class="btn btn-primary">Login </button>
+
+</form>
+Value: {{ loginForm.value | json}}
+
+
+ -->
