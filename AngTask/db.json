@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 6,
+      "firstName": "Naveen",
+      "lastName": "Sai",
+      "email": "naveen@gmail.com",
+      "mobile": "9078234500",
+      "salary": "20000"
+    },
+    {
+      "id": 8,
+      "firstName": "vinii",
+      "lastName": "S",
+      "email": "vini@gmail.com",
+      "mobile": "8645329087",
+      "salary": "40000"
+    },
+    {
+      "id": 9,
+      "firstName": "Ramya",
+      "lastName": "Sri",
+      "email": "ramya@gmail.com",
+      "mobile": "9977605423",
+      "salary": "35000"
+    }
+  ],
+  "signupUser": [
+    {
+      "fullname": "Pavi Rj",
+      "email": "pavirj12@gmail.com",
+      "password": "123456",
+      "mobile": 8976342155,
+      "id": 1
+    },
+    {
+      "fullname": "Priya",
+      "email": "priya@gmail.com",
+      "password": "100000",
+      "mobile": 9956001254,
+      "id": 2
+    },
+    {
+      "fullname": "arul",
+      "email": "arul@gmail.com",
+      "password": "123456",
+      "mobile": 8734529012,
+      "id": 3
+    },
+    {
+      "fullname": "Ram",
+      "email": "ram@gmail.com",
+      "password": "123456",
+      "mobile": 987345677,
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

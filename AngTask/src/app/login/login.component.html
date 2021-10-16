@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>Please enter email & password !!</h6>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" id="email" 
+                          placeholder="Enter your email"
+                          name="email"
+                        
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,3}$"
+               aria-describedby="emailHelp">
+                         
+ 
+                          <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small><br>
+                        <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is required</span>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                          <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required</span>
+                        </div>
+                        <div>
+                        <label for="designation">Designation:</label> &nbsp; &nbsp;
+          <input
+            id="manager"
+            class="form-check-input"
+            name="designation"
+            type="radio"
+            value="customer"
+            
+          />customer &nbsp;&nbsp;
+          <input
+            id="employee"
+            class="form-check-input"
+            name="designation"
+            type="radio"
+            value="employee"
+            
+          />Employee
+        </div>
+        <br />
+        <div class="form-group">
+          
+        </div>
+        
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                      <a style="color: #fff; margin-top:10px"  routerLink="/signup">New user? Click to signup!!</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
